@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CVGestionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Registro">
+    <Key>
+      <PropertyRef Name="id_Aspirante" />
+    </Key>
+    <Property Name="id_Aspirante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_completo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Departamento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Objetivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ins_bachillerato" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_inicio1" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_finalizacion1" Type="DateTime" Precision="0" />
+    <Property Name="Titulo_bto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Departamento_bto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ins_universidad" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_inicio2" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_finalizacion2" Type="DateTime" Precision="0" />
+    <Property Name="Titulo_uni" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Departamento_uni" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Habilidades" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Competencias" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Dominio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_nombre1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_telefono1" Type="Int32" />
+    <Property Name="Ref_tipo1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_nombre2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_telefono2" Type="Int32" />
+    <Property Name="Ref_tipo2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="exp_laboral" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="cargo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="inicio_cargo" Type="DateTime" Precision="0" />
+    <Property Name="fin_cargo" Type="DateTime" Precision="0" />
+    <Property Name="departamento_trabajo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="fotografia" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="CVGestionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Registros" EntityType="Self.Registro" />
+    <EntitySet Name="Usuarios" EntityType="CVGestionModel.Usuario" />
+    <FunctionImport Name="sp_validacion_user" ReturnType="Collection(CVGestionModel.sp_validacion_user_Result)">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="contra" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contra" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pass_enc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sp_validacion_user_Result">
+    <Property Type="Int32" Name="id_usuario" Nullable="false" />
+    <Property Type="String" Name="usuario" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="contra" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="pass_enc" Nullable="true" MaxLength="200" />
+  </ComplexType>
+</Schema>

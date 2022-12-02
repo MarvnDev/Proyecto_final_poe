@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CVGestionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Registros">
+    <Key>
+      <PropertyRef Name="id_Aspirante" />
+    </Key>
+    <Property Name="id_Aspirante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_completo" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Departamento" Type="varchar" MaxLength="150" />
+    <Property Name="Objetivo" Type="nvarchar(max)" />
+    <Property Name="Foto" Type="nvarchar(max)" />
+    <Property Name="Ins_bachillerato" Type="varchar" MaxLength="150" />
+    <Property Name="Fecha_inicio1" Type="date" />
+    <Property Name="Fecha_finalizacion1" Type="date" />
+    <Property Name="Titulo_bto" Type="varchar" MaxLength="150" />
+    <Property Name="Departamento_bto" Type="varchar" MaxLength="150" />
+    <Property Name="Ins_universidad" Type="varchar" MaxLength="150" />
+    <Property Name="Fecha_inicio2" Type="date" />
+    <Property Name="Fecha_finalizacion2" Type="date" />
+    <Property Name="Titulo_uni" Type="varchar" MaxLength="150" />
+    <Property Name="Departamento_uni" Type="varchar" MaxLength="150" />
+    <Property Name="Habilidades" Type="varchar" MaxLength="150" />
+    <Property Name="Competencias" Type="varchar" MaxLength="150" />
+    <Property Name="Dominio" Type="varchar" MaxLength="150" />
+    <Property Name="Ref_nombre1" Type="varchar" MaxLength="150" />
+    <Property Name="Ref_telefono1" Type="int" />
+    <Property Name="Ref_tipo1" Type="varchar" MaxLength="1" />
+    <Property Name="Ref_nombre2" Type="varchar" MaxLength="150" />
+    <Property Name="Ref_telefono2" Type="int" />
+    <Property Name="Ref_tipo2" Type="varchar" MaxLength="1" />
+    <Property Name="Estado" Type="varchar" MaxLength="20" />
+    <Property Name="exp_laboral" Type="varchar" MaxLength="150" />
+    <Property Name="cargo" Type="varchar" MaxLength="150" />
+    <Property Name="inicio_cargo" Type="date" />
+    <Property Name="fin_cargo" Type="date" />
+    <Property Name="departamento_trabajo" Type="varchar" MaxLength="150" />
+    <Property Name="fotografia" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="contra" Type="varchar" MaxLength="100" />
+    <Property Name="pass_enc" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Function Name="sp_validacion_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="contra" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CVGestionModelStoreContainer">
+    <EntitySet Name="Registros" EntityType="Self.Registros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

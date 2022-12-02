@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CVGestionModelStoreContainer" CdmEntityContainer="CVGestionEntities">
+    <EntitySetMapping Name="Registros">
+      <EntityTypeMapping TypeName="CVGestionModel.Registro">
+        <MappingFragment StoreEntitySet="Registros">
+          <ScalarProperty Name="fotografia" ColumnName="fotografia" />
+          <ScalarProperty Name="departamento_trabajo" ColumnName="departamento_trabajo" />
+          <ScalarProperty Name="fin_cargo" ColumnName="fin_cargo" />
+          <ScalarProperty Name="inicio_cargo" ColumnName="inicio_cargo" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="exp_laboral" ColumnName="exp_laboral" />
+          <ScalarProperty Name="id_Aspirante" ColumnName="id_Aspirante" />
+          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre_completo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Objetivo" ColumnName="Objetivo" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Ins_bachillerato" ColumnName="Ins_bachillerato" />
+          <ScalarProperty Name="Fecha_inicio1" ColumnName="Fecha_inicio1" />
+          <ScalarProperty Name="Fecha_finalizacion1" ColumnName="Fecha_finalizacion1" />
+          <ScalarProperty Name="Titulo_bto" ColumnName="Titulo_bto" />
+          <ScalarProperty Name="Departamento_bto" ColumnName="Departamento_bto" />
+          <ScalarProperty Name="Ins_universidad" ColumnName="Ins_universidad" />
+          <ScalarProperty Name="Fecha_inicio2" ColumnName="Fecha_inicio2" />
+          <ScalarProperty Name="Fecha_finalizacion2" ColumnName="Fecha_finalizacion2" />
+          <ScalarProperty Name="Titulo_uni" ColumnName="Titulo_uni" />
+          <ScalarProperty Name="Departamento_uni" ColumnName="Departamento_uni" />
+          <ScalarProperty Name="Habilidades" ColumnName="Habilidades" />
+          <ScalarProperty Name="Competencias" ColumnName="Competencias" />
+          <ScalarProperty Name="Dominio" ColumnName="Dominio" />
+          <ScalarProperty Name="Ref_nombre1" ColumnName="Ref_nombre1" />
+          <ScalarProperty Name="Ref_telefono1" ColumnName="Ref_telefono1" />
+          <ScalarProperty Name="Ref_tipo1" ColumnName="Ref_tipo1" />
+          <ScalarProperty Name="Ref_nombre2" ColumnName="Ref_nombre2" />
+          <ScalarProperty Name="Ref_telefono2" ColumnName="Ref_telefono2" />
+          <ScalarProperty Name="Ref_tipo2" ColumnName="Ref_tipo2" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="CVGestionModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="pass_enc" ColumnName="pass_enc" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_validacion_user" FunctionName="CVGestionModel.Store.sp_validacion_user">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CVGestionModel.sp_validacion_user_Result">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="pass_enc" ColumnName="pass_enc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
